@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang='cs'>
+  <head>
+  <meta charset='utf-8' />
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.12/index.global.min.js'></script>   
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <script src="assets/js/calendar.js"></script>
+  <script src="assets/js/form.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script> 
+  
+  </head>
+  <body>
+    <h1 class="title">Rezervační kalendář</h1>
+    <div id="calendar_background">
+        <div id='calendar'></div>
+    </div>
+    <div id="input">
+        <div id='reservation-form'>
+            <form id='form' action='module/form.php' method="post">
+                <p class="form-upper-text">Vyberte datum a čas podle obsazenosti dle kalendáře nahoře</p>
+                <p class="form-upper-down-text">(všechna pole formuláře <span style='font-weight: bold;'>musí</span> být vyplněna)</p>
+                <label for='facility'>Zařízení:</label>
+                <select id='facility' name='facility' required>
+                    <option value='hriste'>Venkovní hřiště</option>
+                    <option value='sokolovna'>Sokolovna</option>
+                </select>
+                
+                <label for='start'>Začátek:</label>
+                <input type='datetime-local' id='start' name='start' required />
+                
+                <label for='end'>Konec:</label>
+                <input type='datetime-local' id='end' name='end' required  />
+                
+                <label for='purpose'>Účel rezervace:</label>
+                <input type='text' id='purpose' name='purpose' placeholder="Vyplňte účel rezervace" required  />
+                
+                <label for='email'>Email:</label>
+                <input type='email' id='email' name='email' placeholder="Zadejte platný email" required  />
+                
+                <label for='persons'>Počet osob:</label>
+                <input type='number' id='persons' name='persons' min="1" placeholder="Vyplňte počet osob pro Vaší rezervaci" required  />
+                
+                <label class="consent-text">
+                    <input type='checkbox' id='consent' name='consent' required    />
+                    SOUHLASÍM se zpracováním osobních údajů pro účely provedení rezervace v souladu s Obecným nařízením na ochranu osobních údajů (GDPR)
+                </label>
+                
+                <div id='captcha'>
+                    <!-- CAPTCHA implementace -->
+                </div>
+                
+                <button type='submit'>Rezervovat</button>
+            </form>
+            <div id='error-message' class='error-message'></div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
