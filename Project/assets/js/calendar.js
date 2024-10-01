@@ -35,9 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
       meridiem: false
     },
     allDayText: 'Celý den',
-
-   
-
   });
   calendar.render();
 });
