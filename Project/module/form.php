@@ -33,7 +33,15 @@ $stmt_check->fetch();
 $stmt_check->close();
 
 if ($count > 0) {
-    die("Zvolený termín je již zarezervován.");
+    echo "Zvolený termín je již zarezervován.";
+    echo '<br><button onclick="goBack()">Zpět</button>';
+    echo '
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>';
+    die();
 }
 
 $stmt1 = $conn->prepare("INSERT INTO booking (id, facility_id, date_start, date_end, state) VALUES (?, ?, ?, ?, ?)");

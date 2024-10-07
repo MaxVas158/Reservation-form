@@ -17,8 +17,7 @@ function validateForm(event) {
 
     let text;
 
-    
-    
+
     if (start.value === '') {
         text = 'Začátek rezervace musí být vyplněn.';
         errorMessageDiv.innerHTML = text;
@@ -51,8 +50,6 @@ function validateForm(event) {
         errorMessageDiv.innerHTML = text;
         return false;
     }
-
-    alert('Formulář byl úspěšně odeslán!');
     form.submit();
     return true;
 }

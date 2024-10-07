@@ -1,0 +1,126 @@
+{
+    "doctype": "html",
+    "html": {
+      "lang": "cs",
+      "head": {
+        "meta": [
+          {
+            "charset": "utf-8"
+          }
+        ],
+        "scripts": [
+          {
+            "src": "https://cdn.jsdelivr.net/npm/fullcalendar@6.1.12/index.global.min.js"
+          },
+          {
+            "src": "assets/js/calendar.js"
+          },
+          {
+            "src": "assets/js/form.js"
+          },
+          {
+            "src": "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+          },
+          {
+            "src": "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"
+          },
+          {
+            "src": "https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"
+          }
+        ],
+        "links": [
+          {
+            "rel": "stylesheet",
+            "href": "assets/css/main.css"
+          }
+        ]
+      },
+      "body": {
+        "h1": {
+          "class": "title",
+          "text": "Rezervační kalendář"
+        },
+        "div": [
+          {
+            "id": "calendar_background",
+            "div": {
+              "id": "calendar"
+            }
+          },
+          {
+            "id": "input",
+            "div": {
+              "id": "reservation-form",
+              "form": {
+                "id": "form",
+                "action": "module/form.php",
+                "method": "post",
+                "onsubmit": "return validateForm(event)",
+                "p": [
+                  {
+                    "class": "form-upper-text",
+                    "text": "Vyberte datum a čas podle obsazenosti dle kalendáře nahoře"
+                  },
+                  {
+                    "class": "form-upper-down-text",
+                    "text": "(všechna pole formuláře musí být vyplněna)"
+                  }
+                ],
+                "label": [
+                  {
+                    "for": "facility",
+                    "text": "Zařízení:"
+                  },
+                  {
+                    "for": "start",
+                    "text": "Začátek:"
+                  },
+                  {
+                    "for": "end",
+                    "text": "Konec:"
+                  },
+                  {
+                    "for": "purpose",
+                    "text": "Účel rezervace:"
+                  }
+                ],
+                "select": {
+                  "id": "facility",
+                  "name": "facility",
+                  "required": true,
+                  "option": [
+                    {
+                      "value": "hriste",
+                      "text": "Venkovní hřiště"
+                    },
+                    {
+                      "value": "sokolovna",
+                      "text": "Sokolovna"
+                    }
+                  ]
+                },
+                "input": [
+                  {
+                    "type": "datetime-local",
+                    "id": "start",
+                    "name": "start"
+                  },
+                  {
+                    "type": "datetime-local",
+                    "id": "end",
+                    "name": "end"
+                  },
+                  {
+                    "type": "text",
+                    "id": "purpose",
+                    "name": "purpose",
+                    "placeholder": "Vyplňte účel rezervace"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
